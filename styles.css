@@ -1,0 +1,10 @@
+body {
+	background-color: green;
+	color: gold;
+	text-align: center;
+	font: 15px Times New Roman, serif;
+} 
+
+button {
+	background-color: gold;
+}

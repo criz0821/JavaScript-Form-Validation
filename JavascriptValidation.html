@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Information</title>	
+	<link rel='stylesheet' href = 'styles.css'>
+	
+	<script>
+			
+		function validateForm() {
+		
+			var userFirstName = document.getElementById("firstName").value;
+			var userLastName = document.getElementById("lastName").value;
+			var userEmail = document.getElementById("email").value;
+			var text;
+			
+			if (userFirstName == "" && userLastName == "" && userEmail == "") {			
+				text = "Please fill out form.";				
+			}
+			else if (userFirstName == "" && userLastName != "" && userEmail != "") {
+				text = "Please enter your first name.";
+			}
+			else if (userLastName == "" && userEmail != "" && userFirstName != "") {
+				text = "Please enter your last name.";
+			}
+			else if (userEmail == "" && userFirstName != "" && userLastName != "") {
+				text = "Please enter your email.";
+			}
+			else if(userFirstName, userLastName == "" && userEmail != "") {
+				text = "Please enter your first and last name."
+			}
+			else if(userFirstName, userEmail == "" && userLastName != "") {
+				text = "Please enter your first name and email."
+			}
+			else if(userEmail, userLastName == "" && userFirstName != "") {
+				text = "Please enter your last name and email."
+			}
+			else {
+				text = "Thank you, your entry has been received."
+			}
+		
+			document.getElementById("formValidate").innerHTML = text;
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<h1>Customer Info.</h1>
+	
+	<form name = 'custInfo'>
+		First Name: <br>
+		<input type = 'text' id = 'firstName'><br><br>
+		Last Name: <br>
+		<input type = 'text' id = 'lastName'><br><br>
+		Email:<br>
+		<input type = 'text' id = 'email'><br><br>		
+	</form>
+	
+	<button type = 'button' onclick = 'validateForm()'>Submit</button>
+	
+	<p id = 'formValidate'></p>
+	
+</body>
+
+</html>
